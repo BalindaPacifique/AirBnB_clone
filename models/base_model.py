@@ -23,6 +23,8 @@ Public instance methods:
 
 This class will be the base for other classes, providing common attributes and methods.
 """
+
+
 class BaseModel:
     def __init__(self):
         self.id = str(uuid.uuid4())

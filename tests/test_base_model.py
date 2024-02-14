@@ -6,6 +6,8 @@ import unittest
 from datetime import datetime
 from unittest.mock import patch
 from models.base_model import BaseModel
+from os import path, remove
+
 
 class TestBaseModel(unittest.TestCase):
 
@@ -17,7 +19,10 @@ class TestBaseModel(unittest.TestCase):
     def tearDown(self):
         """ Clean up any resources created during the tests """
         # Add any cleanup code you need for your tests here
-        pass
+        try:
+            remove("file.json")
+        except Exception:
+            pass
 
     def test_init(self):
         instance = BaseModel()
