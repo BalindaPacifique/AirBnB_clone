@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from uuid import uuid4
 from datetime import datetime
+from models import storage
 
 
 class BaseModel:
@@ -44,8 +45,11 @@ class BaseModel:
             self.updated_at = datetime.now()
 
     def save(self):
-        """Updates the 'updated_at' attribute to the current timestamp."""
+        """
+        Update the Public Instance Attr updated_at with the current datetime
+        """
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """Returns a dictionary representation of the instance.
