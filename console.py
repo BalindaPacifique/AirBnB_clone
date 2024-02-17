@@ -1,30 +1,27 @@
 #!/usr/bin/env python
 '''AirBNB console Classs'''
-
 import cmd
 
-
 class HBNBCommand(cmd.Cmd):
-    prompt = '(hbnb) '
+    """creating my own cmd interpreter"""
+    prompt = "(hbnb)"
 
-    def do_quit(self, arg):
-        """Quit command to exit the program"""
+    def do_quit(self, line):
+        """exit the command line"""
         return True
-
-    def do_EOF(self, arg):
-        """Exit the program."""
-        print("\nExiting the program.")
+    def do_EOF(self, line):
+        """end the file"""
         return True
+    def help_quit(self, line):
+        """quit documentation"""
+        print("Quit command to exit the program")
+    def help(self, line):
+        """Documented commands (type help <topic>):
+           ========================================
+               EOF  help  quit"""
+    def default(self, line):
+        """for unknown cmd"""
+        print("Unkown commad:{}".format(line))
 
-    def do_help(self, arg):
-        """Show help message."""
-        super().do_help(arg)
-
-    def emptyline(self):
-        """Do nothing on empty input line."""
-        pass
-
-
-if __name__ == '__main__':
-    console = HBNBCommand()
-    console.cmdloop()
+if __name__ == "__main__":
+    HBNBCommand().cmdloop()
