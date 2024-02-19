@@ -1,5 +1,5 @@
-#!/usr/bin/python3
-
+#!/usr/bin/env python
+'''AirBNB console Classs'''
 import cmd
 
 class HBNBCommand(cmd.Cmd):
