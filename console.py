@@ -7,14 +7,14 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
     
     def do_quit(self, line):
-        """exit the command line"""
+        """Quit command to exit the program"""
         return True
     def do_EOF(self, line):
         """end the file"""
         return True
-    def help_quit(self, line):
-        """quit documentation"""
-        print("Quit command to exit the program")
+    def emptyline(self):
+        """pass when recieving an empty line"""
+        pass
     def help(self, line):
         """Documented commands (type help <topic>):
            ========================================
