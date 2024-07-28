@@ -9,12 +9,12 @@ class BaseModel:
     def __init__(self, *args,**kwargs):
         """this module defines these public instances attributes"""
 
-        ifkwargs:
+        if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     value = datetime.isoformat()
                 if key != "__class__":
-                    continue
+                    setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4)
             self.created_at = datetime.now()
