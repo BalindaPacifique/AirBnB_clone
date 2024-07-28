@@ -9,7 +9,7 @@ class BaseModel:
     def __init__(self, *args,**kwargs):
         """this module defines these public instances attributes"""
 
-        if not kwargs:
+        ifkwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     value = datetime.isoformat()
