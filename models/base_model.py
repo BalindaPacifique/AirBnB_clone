@@ -2,13 +2,14 @@
 
 import uuid
 from datetime import datetime
+"""from engine.file_storag import FileStorage"""
+from __init__ import storage
 
 class BaseModel:
     """ This class will define all public instances attributes and models"""
 
     def __init__(self, *args,**kwargs):
         """this module defines these public instances attributes"""
-
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at":
@@ -31,6 +32,7 @@ class BaseModel:
         """This module save and updates the process"""
 
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """Defines a dictionary which save all the public instances"""
