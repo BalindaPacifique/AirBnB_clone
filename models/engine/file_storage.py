@@ -27,4 +27,4 @@ class FileStorage:
     def reload(self):
         """This module defines the load module"""
         with open(self.__file_path, "r") as file:
-            self.__object = json.load(file)
+            self.__objects = json.load(file)
