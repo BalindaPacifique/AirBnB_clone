@@ -2,7 +2,7 @@
 
 import uuid
 from datetime import datetime
-"""from engine.file_storag import FileStorage"""
+import __init__
 
 class BaseModel:
     """ This class will define all public instances attributes and models"""

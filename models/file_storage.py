@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import json
-from models.base_model import BaseModel
+import  base_model
 
 class FileStorage:
     """ This class will help us to serialize and deserialize our dictionaries"""
@@ -28,3 +28,5 @@ class FileStorage:
         """This module defines the load module"""
         with open(self.__file_path, "r") as file:
             self.__objects = json.load(file)
+            if not __file_path:
+                pass

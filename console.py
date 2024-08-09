@@ -7,12 +7,10 @@ class HBNBCommand(cmd.Cmd):
     our users to interact with the back end 
     """
     def do_quit(self, line):
-        """ This module quits the command line"""
+        """ Quit command to exit the program """
         return True
     def do_EOF(self):
         """ Ends the file"""
         return True
 if __name__ == "__main__":
-
-    
     HBNBCommand().cmdloop()
