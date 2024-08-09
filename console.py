@@ -6,7 +6,7 @@ class HBNBCommand(cmd.Cmd):
     This class is for the commanda line, which will allow
     our users to interact with the back end 
     """
-    promt = "(hbnb)"
+    prompt = "(hbnb)"
     def do_quit(self, line):
         """ Quit command to exit the program """
         return True
