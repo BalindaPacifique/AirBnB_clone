@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import __init__
+from file_storage import storage
 from base_model import BaseModel
 
 all_objs = storage.all()

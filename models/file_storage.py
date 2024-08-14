@@ -2,22 +2,24 @@
 
 import json
 import os
-from  base_model import BaseModel
+#from base_model import BaseModel
 
 class FileStorage:
     """ This class will help us to serialize and deserialize our dictionaries"""
     __file_path = "file.json"
     __objects = {}
+    from base_model import BaseModel
 
-    CLASSES = { "BaseModel" : BaseModel()}
+    CLASSES = { "BaseModel" : BaseModel}
 
     def all(self):
         """This module returs the __objects dict"""
         return self.__objects
     def new(self, obj):
         """This module set the new dictionary"""
+        from base_model import BaseModel
         key = f"{self.__class__.__name__}.{obj.id}"
-        self.__objects[key] = obj
+        self.__objects[key] = obj()
     def save(self):
         """This module serialize the __objecs dict to json file"""
         serialized_objects = {}
@@ -31,7 +33,7 @@ class FileStorage:
             with open(self.__file_path, "r") as file:
                 
                 try:
-                    self.deserialized_objects = json.load(file)
+                    deserialized_objects = json.load(file)
                     for key, values in self.deserialized_objects.items():
                         class_name, obj_id = key.split('.')
                         cls_name = eval(class_name)
@@ -39,4 +41,5 @@ class FileStorage:
                         self.__objects[key] = instance
                 except Exception as e:
                     pass
-
+strorage =  FileStorage()
+storage.reload()
