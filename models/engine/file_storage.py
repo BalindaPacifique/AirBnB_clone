@@ -2,7 +2,7 @@
 
 import json
 import os
-from  base_model import BaseModel
+from  models.base_model import BaseModel
 
 class FileStorage:
     """ This class will help us to serialize and deserialize our dictionaries"""
