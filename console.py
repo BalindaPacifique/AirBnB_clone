@@ -10,7 +10,8 @@ class HBNBCommand(cmd.Cmd):
     our users to interact with the back end 
     """
     CLASSES = {
-        "BaseModel": BaseModel
+        "BaseModel": BaseModel,
+        "User" : User
     }
     prompt = "(hbnb)"
     def do_create(self, line):
