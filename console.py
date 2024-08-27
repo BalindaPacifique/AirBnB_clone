@@ -87,7 +87,29 @@ class HBNBCommand(cmd.Cmd):
         Updates an instance based on the class name and id
         by adding or updating attribute
         """
-        pass
+        args = chlex.split(line)
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in self.CLASSES:
+            print("** class doesn't exist **")
+        elif args[1] not in self.CLASSES:
+            print("** instance id missing **")
+        else:
+            objects = storage.all()
+            key = "{}.{}".format(args[0], args[1])
+            if key not in objets:
+                print("** instance id missing **")
+            elif args[
+            name_attribute = args[2]
+            name_values = args[3]
+
+            try:
+                name_values = eval(name_values)
+            except Exception as e:
+                pass
+            setattr(objects, name_attribute, name_values)
+            
+            objects.save()         
 
     def do_quit(self, line):
         """ Quit command to exit the program """
